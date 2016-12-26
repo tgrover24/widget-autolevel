@@ -1409,7 +1409,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
                     that.send("G38.2 Z-100 F" + probeFeedRate + "\n");
                 } else {
                     // on subsequent we have a known z near pcb board so no need to go too negative (just in case)
-                    that.send("G38.2 Z" + maxNegZ + " F" + probeFeedRate + "\n");
+                    that.send("G38.2 Z-100 F" + probeFeedRate + "\n");
                 }
             }, 3000);
             
