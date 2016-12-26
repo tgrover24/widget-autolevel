@@ -1325,7 +1325,7 @@ var getGithubUrl = function(callback) {
   url = "http://github.com" + url;
   
   var rawurl = url.replace(/\/github.com\//i, "/raw.githubusercontent.com/");
-  rawurl += '/master/auto-generated-widget.html';
+  rawurl += 'master/auto-generated-widget.html';
   
   var ret = {
     url: url,
