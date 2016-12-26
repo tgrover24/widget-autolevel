@@ -1161,7 +1161,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
             this.status("Runing test probe.");
             this.send("G21 G90 (Use mm and abs coords)\n");
             var probeFeedRate = $('.autolevel-elem.al-coord.probe-fr').val();
-            this.send("G38.2 Z-10 F" + probeFeedRate + "\n");
+            this.send("G38.2 Z-100 F" + probeFeedRate + "\n");
         },
         startAutoLevel: function() {
             this.currentStep = null;
@@ -1406,7 +1406,7 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
                 var probeFeedRate = $('.autolevel-elem.al-coord.probe-fr').val();
                 if (that.currentStep == 0) {
                     // send long neg z command (hope this works) on 1st step cuz could have high z val
-                    that.send("G38.2 Z-10 F" + probeFeedRate + "\n");
+                    that.send("G38.2 Z-100 F" + probeFeedRate + "\n");
                 } else {
                     // on subsequent we have a known z near pcb board so no need to go too negative (just in case)
                     that.send("G38.2 Z" + maxNegZ + " F" + probeFeedRate + "\n");
